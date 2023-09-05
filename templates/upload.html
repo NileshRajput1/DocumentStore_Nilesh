@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Store</title>
+    <!-- Include the Tailwind CSS stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-purple-500 py-4">
+        <div class="container mx-auto">
+            <a href="/" class="text-white text-xl font-bold">Document Store</a>
+            <a href="/search" class="ml-4 text-white hover:underline">Search</a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 flex space-x-8">
+        <!-- Upload File Section -->
+        <div class="w-1/2 p-4 bg-white rounded-lg shadow-md">
+            <h1 class="text-2xl font-semibold mb-4 text-center">Upload File</h1>
+            <form method="POST" enctype="multipart/form-data" class="text-center">
+                <div class="mb-4">
+                    <label for="email_id" class="block text-gray-700 text-sm font-bold mb-2">Email ID:</label>
+                    <input type="text" name="email_id" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Email ID">
+                </div>
+                <div class="mb-4">
+                    <label for="filename" class="block text-gray-700 text-sm font-bold mb-2">Filename:</label>
+                    <input type="text" name="filename" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Filename">
+                </div>
+                <div class="mb-4">
+                    <label for="file" class="block text-gray-700 text-sm font-bold mb-2">File:</label>
+                    <input type="file" name="file" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Upload</button>
+            </form>
+        </div>
+
+        <!-- Search Files Section -->
+        <div class="w-1/2 p-4 bg-white rounded-lg shadow-md">
+            <h1 class="text-2xl font-semibold mb-4 text-center">Search Files</h1>
+            <form method="POST" action="/search" class="text-center">
+                <div class="mb-4">
+                    <label for="email_id" class="block text-gray-700 text-sm font-bold mb-2">Email ID (Mandatory):</label>
+                    <input type="text" name="email_id" id="email_id" required class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Email ID">
+                </div>
+                <div class="mb-4">
+                    <label for="search_query" class="block text-gray-700 text-sm font-bold mb-2">Search Query:</label>
+                    <input type="text" name="search_query" id="search_query" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Search Query">
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Search</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
