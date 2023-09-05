@@ -1,109 +1,76 @@
-# DocumentStore_Nilesh
-<!DOCTYPE html>
-<html>
+# Document Store Application on AWS
 
-<head>
-    <title>Document Store Application on AWS</title>
-</head>
+This project demonstrates the creation of a Document Store application on Amazon Web Services (AWS) using Python and Boto3 API. The application allows users to upload, search, and download files stored in an AWS S3 bucket. The application will be hosted on an Amazon EC2 instance within a Virtual Private Cloud (VPC) and made accessible from the internet.
 
-<body>
-    <h1>Document Store Application on AWS with Python and Boto3</h1>
+## AWS Cloud Infrastructure Requirements
 
-    <p>This project demonstrates the creation of a Document Store application on Amazon Web Services (AWS) using Python and Boto3 API. The application allows users to upload, search, and download files stored in an AWS S3 bucket. The application will be hosted on an Amazon EC2 instance within a Virtual Private Cloud (VPC) and made accessible from the internet.</p>
+1. **AWS Account:**
+   - You need an AWS account to use AWS services. AWS offers a free tier for some services, and this project aims to stay within those limits.
 
-    <h2>AWS Cloud Infrastructure Requirements</h2>
+2. **EC2 Instance:**
+   - Create an EC2 instance (t2.micro, Amazon Linux 2023) using the Boto3 API.
+   - The instance should have a Public IP address to be accessible from the internet.
 
-    <ol>
-        <li>
-            <strong>AWS Account:</strong> You need an AWS account to use AWS services. AWS offers a free tier for some services, and this project aims to stay within those limits.
-        </li>
-        <li>
-            <strong>EC2 Instance:</strong>
-            <ul>
-                <li>Create an EC2 instance (t2.micro, Amazon Linux 2023) using the Boto3 API.</li>
-                <li>The instance should have a Public IP address to be accessible from the internet.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>S3 Bucket:</strong>
-            <ul>
-                <li>Create an S3 bucket to store documents/files using the Boto3 API.</li>
-            </ul>
-        </li>
-    </ol>
+3. **S3 Bucket:**
+   - Create an S3 bucket to store documents/files using the Boto3 API.
 
-    <h2>Application Requirements</h2>
+## Application Requirements
 
-    <p>The Document Store application should have a simple UI with the following features:</p>
+The Document Store application should have a simple UI with the following features:
 
-    <h3>1. Upload Feature</h3>
+### 1. Upload Feature
 
-    <ul>
-        <li>The upload function should contain two input fields:
-            <ul>
-                <li>Email ID (mandatory field): e.g., abc@gmail.com, xyz@gmail.com</li>
-                <li>Filename: e.g., mybook, yourbook</li>
-            </ul>
-        </li>
-        <li>Note: Files should be uploaded to the S3 bucket with a format of emailID_filename (e.g., abc@gmail.com_mybook, xyz@gmail.com_yourbook).</li>
-    </ul>
+- The upload function should contain two input fields:
+  - Email ID (mandatory field): e.g., abc@gmail.com, xyz@gmail.com
+  - Filename: e.g., mybook, yourbook
+- Note: Files should be uploaded to the S3 bucket with a format of emailID_filename (e.g., abc@gmail.com_mybook, xyz@gmail.com_yourbook).
 
-    <h3>2. Search Feature</h3>
+### 2. Search Feature
 
-    <ul>
-        <li>Fields to input:
-            <ul>
-                <li>Email ID (mandatory field): e.g., abc@gmail.com, xyz@gmail.com</li>
-                <li>Search query: e.g., mybook</li>
-            </ul>
-        </li>
-        <li>Results will be displayed as follows:
-            <ul>
-                <li>abc@gmail.com_mybook</li>
-                <li>xyz@gmail.com_mybook (if applicable)</li>
-            </ul>
-        </li>
-    </ul>
+- Fields to input:
+  - Email ID (mandatory field): e.g., abc@gmail.com, xyz@gmail.com
+  - Search query: e.g., mybook
+- Results will be displayed as follows:
+  - abc@gmail.com_mybook
+  - xyz@gmail.com_mybook (if applicable)
 
-    <h3>3. Download Feature</h3>
+### 3. Download Feature
 
-    <ul>
-        <li>Based on the search result, users should be able to select and download files.</li>
-    </ul>
+- Based on the search result, users should be able to select and download files.
 
-    <h2>Hosting the Application with Nginx</h2>
+## Hosting the Application with Nginx
 
-    <p>Please refer to the provided document on how to host the application using Nginx. You can use any tool to host the application, but Nginx is recommended for its ease of use and scalability.</p>
+Please refer to the provided document on how to host the application using Nginx. You can use any tool to host the application, but Nginx is recommended for its ease of use and scalability.
 
-    <h2>Getting Started</h2>
+## Getting Started
 
-    <ol>
-        <li>Clone this repository to your local machine:
-            <pre><code>git clone &lt;repository_url&gt;</code></pre>
-        </li>
-        <li>Set up AWS credentials using the AWS CLI or environment variables.</li>
-        <li>Install the necessary Python packages using pip:
-            <pre><code>pip install boto3 flask</code></pre>
-        </li>
-        <li>Run the application:
-            <pre><code>python app.py</code></pre>
-        </li>
-        <li>Access the application through a web browser using the EC2 instance's public IP address.</li>
-    </ol>
+1. Clone this repository to your local machine:
+git clone <repository_url>
 
-    <h2>Directory Structure</h2>
+sql
+Copy code
 
-    <ul>
-        <li><code>app.py:</code> The main Python script for the Document Store application.</li>
-        <li><code>templates/:</code> Contains HTML templates for the application's web pages.</li>
-        <li><code>static/:</code> Contains static files (e.g., CSS, JavaScript).</li>
-        <li><code>README.md:</code> This readme file.</li>
-    </ul>
+2. Set up AWS credentials using the AWS CLI or environment variables.
 
-   
+3. Install the necessary Python packages using pip:
+pip install boto3 flask
 
-    <p><a href="http://54.159.113.165/">http://54.159.113.165/</a>
-</p>
-</body>
+markdown
+Copy code
 
-</html>
+4. Run the application:
+python app.py
+
+markdown
+Copy code
+
+5. Access the application through a web browser using the EC2 instance's public IP address.
+
+## Directory Structure
+
+- `app.py:` The main Python script for the Document Store application.
+- `templates/:` Contains HTML templates for the application's web pages.
+- `static/:` Contains static files (e.g., CSS, JavaScript).
+- `README.md:` This readme file.
+
+[Click here to visit the website](http://54.159.113.165/)
