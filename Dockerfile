@@ -10,11 +10,11 @@ COPY requirements.txt .
 # Install the required Python packages
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install Gunicorn inside the container
-RUN pip install gunicorn
-
 # Copy the rest of the application code into the container
 COPY . .
+
+# Copy the aws.py file into the container
+COPY aws.py .
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
