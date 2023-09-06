@@ -16,5 +16,5 @@ COPY . .
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
-# Run the Flask app on port 8080
-CMD ["python", "app.py"]
+# Use Gunicorn as the production WSGI server to run the Flask app
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "app:app"]
