@@ -13,8 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
-# Copy the aws.py file into the container
-COPY aws.py .
+# Set AWS credentials as environment variables in the Dockerfile (for testing purposes only)
+ENV AWS_ACCESS_KEY_ID=AKIAQFQIIDQJPUXCI5EO
+ENV AWS_SECRET_ACCESS_KEY=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
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
