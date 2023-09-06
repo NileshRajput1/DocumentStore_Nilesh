@@ -38,39 +38,29 @@ The Document Store application should have a simple UI with the following featur
 
 - Based on the search result, users should be able to select and download files.
 
-## Hosting the Application with Nginx
 
-Please refer to the provided document on how to host the application using Nginx. You can use any tool to host the application, but Nginx is recommended for its ease of use and scalability.
 
 ## Getting Started
 
 1. Clone this repository to your local machine:
 git clone <repository_url>
 
-sql
-Copy code
+2. Install the necessary Python packages using pip:
 
-2. Set up AWS credentials using the AWS CLI or environment variables.
-
-3. Install the necessary Python packages using pip:
-pip install boto3 flask
-
-markdown
-Copy code
-
-4. Run the application:
+3. Run the application:
+python aws.py
+ then
 python app.py
 
-markdown
-Copy code
 
-5. Access the application through a web browser using the EC2 instance's public IP address.
+4. Access the application through a web browser using the EC2 instance's public IP address.
 
 ## Directory Structure
 
 - `app.py:` The main Python script for the Document Store application.
+- `aws.py:` The main Python script for setting up database infrastrucutre on aws(s3,ec2).
 - `templates/:` Contains HTML templates for the application's web pages.
-- `static/:` Contains static files (e.g., CSS, JavaScript).
-- `README.md:` This readme file.
+- `requirments.txt:` Contains required packages.
+
 
 [Click here to visit the website](http://54.159.113.165/)
