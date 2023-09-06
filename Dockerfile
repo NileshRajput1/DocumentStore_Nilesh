@@ -13,8 +13,12 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Define environment variable
+# Set necessary environment variable
 ENV NAME World
+
+# Ensure that the Flask app is healthy before considering the container as healthy
+HEALTHCHECK --interval=5s --timeout=3s \
+  CMD curl -f http://localhost:5000/ || exit 1
 
 # Run the Flask app
 CMD ["python", "app.py"]
