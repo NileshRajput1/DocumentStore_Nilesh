@@ -48,9 +48,8 @@ git clone <repository_url>
 2. Install the necessary Python packages using pip:
 
 3. Run the application:
-python aws.py
- then
-python app.py
+python app.py  (aws.py has already created infrastructure for storing and retrival of data)
+ 
 
 
 4. Access the application through a web browser using the EC2 instance's public IP address.
