@@ -1,24 +1,20 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8
+FROM python:3.8-slim
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy only the requirements file first to leverage Docker cache
+COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+# Install the required Python packages
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+# Copy the rest of the application code into the container
+COPY . .
 
-# Set necessary environment variable
-ENV NAME World
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
-# Ensure that the Flask app is healthy before considering the container as healthy
-HEALTHCHECK --interval=5s --timeout=3s \
-  CMD curl -f http://localhost:5000/ || exit 1
-
-# Run the Flask app
+# Run the Flask app on port 8080
 CMD ["python", "app.py"]
