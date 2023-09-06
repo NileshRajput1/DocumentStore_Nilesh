@@ -20,6 +20,6 @@ ec2.associate_address(InstanceId=instance_id, PublicIp=public_ip)
 
 s3 = boto3.client('s3', region_name='us-east-1')  
 
-bucket_name = 'nilesh9245'
+bucket_name = 'nilesh2041019245'
 
 s3.create_bucket(Bucket=bucket_name)
