@@ -10,6 +10,9 @@ COPY requirements.txt .
 # Install the required Python packages
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install Gunicorn inside the container
+RUN pip install gunicorn
+
 # Copy the rest of the application code into the container
 COPY . .
 
