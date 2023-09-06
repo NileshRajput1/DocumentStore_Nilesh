@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 s3 = boto3.client('s3')
-S3_BUCKET_NAME = 'nilesh9245'
+S3_BUCKET_NAME = 'nilesh2041019245'
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
